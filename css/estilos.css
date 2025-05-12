@@ -1,0 +1,142 @@
+:root{ /* html */
+    --colorFondo: #292838;
+    --colorPrimary: #153792;
+    --colorBlanco: #e0dcdc; 
+    --colorNegro: #111;
+    --grisOscuro: #111111;
+    scroll-behavior: smooth;
+    font-family: sans-serif;
+}
+
+/* 1rem = 16px */ 
+/*
+.themaDark{
+    --colorFondo: #0f0f14;
+    --colorPrimary: #18223d;
+    --colorBlanco: #111; 
+    --colorNegro: #fff;
+}*/
+/*********************** Contenedores de etiqueta ***************************/
+body {
+    background-color: var(--colorFondo);
+    margin: 0px;
+    min-width: 320px;
+    max-width: 100vw;
+    min-height: 100vh;
+    color: var(--colorBlanco);
+}
+a{ text-decoration: none;}
+
+header{
+    background-color: var(--colorPrimary);
+    color: var(--colorBlanco);
+    display: flex;
+    justify-content: space-between;
+    padding: 2px 1em 2px 0px;
+    align-items: center;
+}
+/************************ HEADER *************************/
+.identificador{
+    display: flex;
+    align-items: center;
+}
+.identificador h1{
+    margin: 0px;
+    font-size: 1.3em;
+    font-weight: 100;
+}
+.contenedorImg{
+    background-color: var(--colorBlanco);
+    padding: 0px 1.5em;
+    max-height: 2.8em;
+    width: 10em;
+    overflow: hidden;
+    border-radius: 0px 2em 2em 0px;
+    display: flex;
+    align-items: center;
+    margin-right: 1em;
+    
+}
+.identificador img{
+    width: 8em;
+} 
+
+/***************************** clases generales ****************************/
+.aBoton{
+    background-color: var(--colorBlanco);
+    padding: .4em 1.5em;
+    border-radius: 1em;
+    color: var(--colorPrimary);
+    font-weight: 600;
+    box-shadow: 0px 0px .5em .2em #3338;
+}
+.aBoton:hover{
+    background: linear-gradient(180deg, #fff,var(--colorBlanco), #fff8);
+}
+
+.contenedorPrincipal{
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    min-height: calc(100vh - 5em);
+    gap: 1em;
+}
+
+.subtitulo{
+    width: calc(100% - 2em);
+    padding-bottom: .2em 1em;
+    border-bottom: solid 1px var(--colorBlanco);
+}
+
+.tablaGeneral{
+    width: 100%;
+    border-collapse: collapse;
+}
+.tablaGeneral thead{
+    background-color: #153792;
+}
+.tablaGeneral th,
+.tablaGeneral td{
+    padding: .2em;
+    vertical-align:middle;
+    text-align: center;
+}
+.tablaGeneral tbody tr:nth-child(odd){
+    background-color: #1115;
+}
+.tablaGeneral tbody tr:hover{
+    background-color: #153792;
+}
+.tablaGeneral tfoot{
+    background-color: #111111;
+}
+.tablaGeneral tr th{
+    font-weight: 400;
+}
+.tablaGeneral td{
+    width: 15%;
+}
+th.destaca{
+    color: red;
+}
+.tablaGeneral th,
+.tablaGeneral td{
+    border: dotted 2px #153792;
+}
+
+
+/**************************** Lanzador de dados ********************************/
+
+
+.formLanzador{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1em;
+}
+.formLanzador fieldset{
+    background-color: var(--grisOscuro);
+    margin: 1em 0px;
+    border: none;
+    border-radius: 0px 2em 2em 0px;
+    padding: 1em;
+    max-width: 8em;
+}

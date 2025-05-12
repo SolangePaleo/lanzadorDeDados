@@ -8,14 +8,26 @@
     <meta name="author" content="S. Solange Paleo">	
     <title>Lanzador de dados</title>
     <link rel="icon" type="image/png" href="/assets/img/ico.png">
+    <link rel="stylesheet" href="./css/estilos.css">
+    <!--script src="./js/componedor.js"></script-->
+
+    <!-- defer: Un script que se descargará en paralelo 
+     al análisis de la página y se ejecutará después de 
+     que la página haya terminado de analizarse -->
+    <script src="./js/manejoSesion.js" defer></script>
+
 </head>
 <body>
     <header id="top">
-        <div>
-            <img src="" alt="logo de la UDC">
+        <section class="identificador">
+            <div class="contenedorImg">
+                <img src="./img/isologoUDC-horizontal-web.png" alt="logo de la UDC">
+            </div>
             <h1>Lanzador de dados</h1>
+        </section>
+        <div id="usuario">
+            <a href="#login-form" class="aBoton">Iniciar Sesion</a>
         </div>
-        <a href="#login">Iniciar Sesion</a>
     </header >
     <!--nav>
         <a href="#">Lanzador</a>
@@ -23,11 +35,14 @@
         <a href="/extranet/historico.html">Historico</a>
         <a href="/extranet/personalizacion.html">Personalizar</a>
     </nav-->
-    <main>
-        <form >
-            <fieldset>
-                <h2>Sets</h2>
-                <ul>
+    <main class="contenedorPrincipal">
+        <!--div class="contenedorImagen">
+            <img src="./assets/img/ico.png" alt="dado">
+        </div-->
+        <form class="formLanzador">
+            <fieldset class="selectorDados">
+                <h2 class="subtitulo">Sets</h2>
+                <ul class="listaDados">
                     <li>
                         <img src="" alt="D2">
                         <input type="number" min="0"
@@ -63,17 +78,21 @@
                     </li>
                 </ul>
             </fieldset>
-            <article>
-                <div><img src="" alt=""></div>
-                <div>
+            <article class="lanzador">
+                <div class="contenedorPublicidad">
+                    <img src="" alt="">
+                </div>
+                <div id="panelLanzado">
                     <button type="submit">Lanzar dados</button>
                 </div>
-                <div><img src="" alt=""></div>
+                <div class="contenedorPublicidad">
+                    <img src="" alt="">
+                </div>
             </article>
         </form>
         <aside>
             <h2>Historial de tiradas</h2>
-            <table>
+            <table class="tablaGeneral">
                 <thead>
                     <tr>
                         <th>Ronda</th>
@@ -81,7 +100,7 @@
                         <th>R2</th>
                         <th>R3</th>
                         <th>R4</th>
-                        <th>R5</th>
+                        <th class="destaca">R5</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -141,8 +160,8 @@
     </main>
     
 
-    <section id="login" >
-        <form action="/index_logueado.html" method="get">
+    <section id="secion-formulario" >
+        <form id="login-form" >
             <fieldset>
                 <legend>Formulario</legend>
                 <p>
@@ -163,8 +182,8 @@
         </form>
 
     </section>
+    
     <footer>
-
     </footer>
 </body>
 </html>
