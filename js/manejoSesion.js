@@ -9,6 +9,15 @@ const ID_SECCION_FORM_LOGIN = "secion-formulario"
 
 class Sesion{
     usuario=null
+    KEY_LOCAL ="sesion_usuario"
+
+    comprobarSesion=()=>{
+        let sesionLocal = this.getLocal(this.KEY_LOCAL)
+        console.log(sesionLocal)
+        if(sesionLocal){
+            this.iniciarSesion(sesionLocal,null)
+        }
+    }
     
     iniciarSesion=(user,pass)=>{
         /**
@@ -17,12 +26,14 @@ class Sesion{
         this.usuario = user
         this.setCabecera()
         this.hideShowFormulario(false)
+        this.setLocal(this.KEY_LOCAL,user)
     }
 
     cerrarSesion=()=>{
         this.usuario=null
         this.setCabecera(true)
         this.hideShowFormulario()
+        localStorage.removeItem(this.KEY_LOCAL)
     }
 
     sesionActiva=()=>this.usuario!=null
@@ -49,6 +60,15 @@ class Sesion{
             return -1
         }
         form.style.display=mostrar?"block":"none"
+    }
+
+    setLocal=(key,value)=>{
+        localStorage.setItem(key,value)
+    }
+
+    getLocal=(key)=>{
+        /** validar que la llave exista */
+        return localStorage.getItem(key)
     }
 
 }
@@ -86,3 +106,7 @@ function onLogin(event){
 const SESION = new Sesion()
 const FORMULARIO_LOGIN = document.getElementById("login-form")
 FORMULARIO_LOGIN.addEventListener("submit",onLogin)
+
+console.log("--------------------------------------------------------")
+localStorage.setItem("local","Storage Local") //<--- dominio navegador
+sessionStorage.setItem("sesion","Storage Sesion") //<--- dominio pestaña

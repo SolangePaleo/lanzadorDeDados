@@ -9,25 +9,17 @@
     <title>Lanzador de dados</title>
     <link rel="icon" type="image/png" href="/assets/img/ico.png">
     <link rel="stylesheet" href="./css/estilos.css">
-    <!--script src="./js/componedor.js"></script-->
+    <script src="./js/componedor.js" defer></script>
 
     <!-- defer: Un script que se descargará en paralelo 
      al análisis de la página y se ejecutará después de 
      que la página haya terminado de analizarse -->
-    <script src="./js/manejoSesion.js" defer></script>
+    <script  src="./js/manejoSesion.js" defer></script>
 
 </head>
-<body>
+<body onload="COMPONEDOR.cargarTodo('Lanzador de Dados')
+                        .then(()=>SESION.comprobarSesion())">
     <header id="top">
-        <section class="identificador">
-            <div class="contenedorImg">
-                <img src="./img/isologoUDC-horizontal-web.png" alt="logo de la UDC">
-            </div>
-            <h1>Lanzador de dados</h1>
-        </section>
-        <div id="usuario">
-            <a href="#login-form" class="aBoton">Iniciar Sesion</a>
-        </div>
     </header >
     <!--nav>
         <a href="#">Lanzador</a>
