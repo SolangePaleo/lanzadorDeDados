@@ -9,16 +9,30 @@
     <title>Lanzador de dados</title>
     <link rel="icon" type="image/png" href="/assets/img/ico.png">
     <link rel="stylesheet" href="./css/estilos.css">
-    <script src="./js/componedor.js" defer></script>
+   
 
     <!-- defer: Un script que se descargará en paralelo 
      al análisis de la página y se ejecutará después de 
      que la página haya terminado de analizarse -->
-    <script  src="./js/manejoSesion.js" defer></script>
+
+    <!-- 
+     Ahora vamnos a remplazar la importaciòn de los dos archivos js 
+     por la importaciòn de un módulo que funciones como un controlador general 
+     - Lo importante es agregar el type="modulo" a nuestro archivo principal
+     - En el resto de archivos se debe exportar funciones, clases y variables necesarias
+       para ejecutar
+     - En el modulo principal importaremos y ejecutaremos dichos recursos y mòdulos
+    -->
+    <script src="./js/main.js" type="module" defer></script>
+    <!--script src="./js/componedor.js" defer></script-->
+    <!--script  src="./js/manejoSesion.js" defer></script-->
+
+    <script src="./js/handlerTabla.js" defer></script>
 
 </head>
-<body onload="COMPONEDOR.cargarTodo('Lanzador de Dados')
-                        .then(()=>SESION.comprobarSesion())">
+<body onload="cargarTodo('Lanzador de Dados')">
+<!--body onload="COMPONEDOR.cargarTodo('Lanzador de Dados')
+                        .then(()=>SESION.comprobarSesion())"-->
     <header id="top">
     </header >
     <!--nav>
@@ -84,68 +98,15 @@
         </form>
         <aside>
             <h2>Historial de tiradas</h2>
-            <table class="tablaGeneral">
+            <table id="tablaPuntajes" class="tablaGeneral">
                 <thead>
-                    <tr>
-                        <th>Ronda</th>
-                        <th>R1</th>
-                        <th>R2</th>
-                        <th>R3</th>
-                        <th>R4</th>
-                        <th class="destaca">R5</th>
-                    </tr>
+                   
                 </thead>
                 <tbody>
-                    <tr>
-                        <th>D2</th>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                    </tr>
-                    <tr>
-                        <th>D2</th>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                    </tr>
-                    <tr>
-                        <th>D2</th>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                    </tr>
-                    <tr>
-                        <th>D2</th>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                    </tr>
-                    <tr>
-                        <th>D2</th>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                    </tr>
+                    
                 </tbody>
                 <tfoot>
-                    <tr>
-                        <th>Totales</th>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                    </tr>
+                    
                 </tfoot>
             </table>
         </aside>

@@ -1,6 +1,6 @@
-const CLAVE_TITULO = "$LANZADOR_DADOS$" 
 
-class componedorHTML{
+export class componedorHTML{
+   CLAVE_TITULO = "$LANZADOR_DADOS$" 
    footerURL = "/fragments/_footer.html"
    headerURL = "/fragments/_header.html"
 
@@ -10,7 +10,7 @@ class componedorHTML{
 
       return this.cargarFragmento(this.headerURL)
          .then(respuesta =>{
-            respuesta = respuesta.replace(CLAVE_TITULO,titulo)
+            respuesta = respuesta.replace(this.CLAVE_TITULO,titulo)
             HEADER.innerHTML=respuesta
             //-- aca podria comprobar la sesiòn 
          })
@@ -39,5 +39,12 @@ class componedorHTML{
    }
 }
 
-const COMPONEDOR = new componedorHTML();
+export function Saludo(){ 
+   alert("hola")
+}
+export const url = "localhost"
 
+const otraConstante = "otra cosa"
+/** Lo mismo que en el ptrp script, mandamos la declaraciòn a nuestro modulo principal. 
+const COMPONEDOR = new componedorHTML();
+*/
